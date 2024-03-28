@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "terraform_state"{
-  bucket = "devops-terraform-state-bucket-us-east-1"
+  bucket = "devops-terraform-statefile-bucket-us-east-1"
 
   # Prevent accidental deletion of this S3 bucket
   /*lifecycle {
@@ -62,7 +62,7 @@ distributed lock system.
 */
 
 resource "aws_dynamodb_table" "terraform_locks" {
-  name         = "LOCK-Files"
+  name         = "Lock-Files"
   billing_mode = "PAY_PER_REQUEST"
   hash_key     = "LockID"
 
